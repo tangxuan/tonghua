@@ -1,0 +1,61 @@
+<section data-ng-controller="MembersController">
+    <div class="page-header">
+        <h1>增加学员</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="code">学号</label>
+                    <div class="controls">
+                        <input type="text" ng-model="code" id="code" class="form-control" placeholder="请输入学号" ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">名字</label>
+                    <div class="controls">
+                        <input type="text" ng-model="name" id="name" class="form-control" placeholder="请输入名称" ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="birthday">生日</label>
+                    <div class="controls input-group">
+                        <!-- TODO: remove unused attribute -->
+                        <input type="date" class="form-control" datepicker-popup ng-model="birthday" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="phone">电话</label>
+                    <div class="controls">
+                        <input type="text" ng-model="phoneNumber" id="phone" class="form-control" placeholder="请输入电话">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="address">地址</label>
+                    <div class="controls">
+                        <input type="text" ng-model="address" id="address" class="form-control" placeholder="请输入地址">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="lessonCount">课程数</label>
+                    <div class="controls">
+                        <input type="text" ng-model="lessonCount" id="lessonCount" class="form-control" placeholder="请输入地址">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+    				<label data-ng-show="error" class="text-danger">
+    					<strong data-ng-bind="error"></strong>
+    				</label>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
